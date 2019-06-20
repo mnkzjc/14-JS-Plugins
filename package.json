@@ -40,5 +40,8 @@
     "nu-html-checker": "^0.1.0",
     "onchange": "^5.2.0",
     "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "flickity-hash": "^1.0.3"
   }
 }
