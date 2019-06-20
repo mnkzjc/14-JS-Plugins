@@ -1,52 +1,15 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-.carousel-wrapper {
-  position: relative;
-}
+.carousel-wrapper { position: relative; }
 
-.button-reset {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 5px;
-}
+.button-reset { position: absolute; top: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: #ffffff; font-size: 20px; padding: 10px; border-radius: 5px; }
 
-.carousel-cell {
-  width: 100%;
-  /* full width */
-  height: 50vh;
-  /* height of carousel */
-  min-height: 250px;
-  margin-right: 10px;
-  background-size: cover;
-  background-position: center;
-}
+.carousel-cell { width: 100%; /* full width */ height: 50vh; /* height of carousel */ min-height: 250px; margin-right: 10px; background-size: cover; background-position: center; }
 
-.flickity-page-dots {
-  display: none;
-}
+.flickity-page-dots { display: none; }
 
-.progress-bar {
-  height: 20px;
-  width: 0;
-  background: #333;
-}
+.progress-bar { height: 20px; width: 0; background: #333; }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #ffffff;
-  text-align: center;
-}
+.container { max-width: 1200px; margin: 0 auto; color: #ffffff; text-align: center; }
 
-.container p {
-  padding: 0 20px;
-}
-
-/*# sourceMappingURL=style.css.map */
+.container p { padding: 0 20px; }
