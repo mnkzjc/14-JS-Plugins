@@ -46,3 +46,21 @@
         padding: 0 20px;
     }
 }
+
+#cell-nav {
+    text-align: center;
+    padding: 10px;
+    a {
+        color: #000;
+        display: inline-block;
+        line-height: 25px;
+        width: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-decoration: none;
+        &:hover {
+            background-color: #333;
+            color: #ffffff;
+        }
+    }
+}
