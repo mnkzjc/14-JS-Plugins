@@ -7,6 +7,7 @@ var flkty = new Flickity( elem, {
   autoPlay: true,
   cellAlign: 'left',
   contain: true,
+  hash: true,
   wrapAround: true
 });
 
