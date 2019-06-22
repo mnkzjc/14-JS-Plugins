@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // carousel
 var elem = document.querySelector('.main-carousel');
