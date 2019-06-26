@@ -1,5 +1,23 @@
 'use strict';
 
+// mustache
+(function(){
+  var cellTemplate = document.getElementById('carousel-cells-template').innerHTML;
+
+  Mustache.parse(cellTemplate);
+
+  var listCells = '';
+
+  for(var i = 0; i < cellData.length; i++){
+    console.log(cellData);
+    listCells += Mustache.render(cellTemplate, cellData[i]);
+  }
+
+results.insertAdjacentHTML('beforeend', listCells);
+  
+})();
+
+
 // carousel
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
