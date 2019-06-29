@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="carousel-wrapper">  
+<div id="carousel-wrapper">  
     
 
     <div class="main-carousel" id="results">
@@ -23,7 +23,7 @@
         <button class="button button-reset">Reset</button>
     </div>
 
-    <div id="cell-nav">
+    <!-- <div id="cell-nav">
         <a href="#carousel-cell1">1</a>
         <a href="#carousel-cell2">2</a>
         <a href="#carousel-cell3">3</a>
@@ -31,7 +31,12 @@
         <a href="#carousel-cell5">5</a>
         <a href="#carousel-cell6">6</a>
         <a href="#carousel-cell7">7</a>
-    </div>
+    </div> -->
+</div>
+
+<div id="map-wrapper">
+    <p id="marker-infos"></p>
+    <div id="map"></div>
 </div>
 
 
@@ -39,13 +44,13 @@
 <script src="vendor/mustache.js"></script>
 <script src="vendor/flickity.pkgd.min.js"></script>
 <script src="vendor/hash.js"></script>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script>
 
 <script id="carousel-cells-template" type="x-tmpl-mustache">
     
     <div class="carousel-cell" id="{{ id }}" style="background-image: url( {{ image }} )">
         <div class="container">
-            <header> {{ title }} </header>
+            <header><h3> {{ title }} </h3></header>
             {{{ description }}}
         </div>
     </div>  
@@ -55,49 +60,57 @@
 <script>   
     var cellData = [
         {
-            image: 'https://picsum.photos/2000/1000?random=1',
+            image: 'images/gryf_deptak.JPG',
             id: 'carousel-cell1',
-            title: 'Picture 1',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Gryf na Deptaku Bogusława',
+            coords: {lat: 53.429032, lng: 14.543895},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="Gryf Deptak"> <p>Dolor sit.</p>'
         },
         {
-            image: 'https://picsum.photos/2000/1000?random=2',
+            image: 'images/gryf_jp2.jpg',
             id: 'carousel-cell2',
-            title: 'Picture 2',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Gryf przed Szpinakowym Pałacem (Urzędem Miasta)',
+            coords: {lat: 53.437362, lng: 14.543154},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="Gryf Al. JP2"> <p>Dolor sit.</p>'
         },
         {
-            image: 'https://picsum.photos/2000/1000?random=3',
+            image: 'images/UM_coa.jpg',
             id: 'carousel-cell3',
-            title: 'Picture 3',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Kartusz Urzędu Miasta',
+            coords: {lat: 53.438109, lng: 14.542393},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="CoA UM"> <p>Dolor sit.</p>'
         },
         {
-            image: 'https://picsum.photos/2000/1000?random=4',
+            image: 'images/gryf_Palac_Ziemstwa_3.jpg',
             id: 'carousel-cell4',
-            title: 'Picture 4',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Gryf Pałacu Ziemstwa Pomorskiego',
+            coords: {lat: 53.426931, lng: 14.551057},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="Pałac Ziemstwa"> <p>Dolor sit.</p>'
         },
         {
-            image: 'https://picsum.photos/2000/1000?random=5',
+            image: 'images/gryf_we.jpg',
             id: 'carousel-cell5',
-            title: 'Picture 5',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Gryfy Wydziału Elektrycznego',
+            coords: {lat: 53.424885, lng: 14.533798},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="Gryf WE"> <p>Dolor sit.</p>'
         },
         {
-            image: 'https://picsum.photos/2000/1000?random=6',
+            image: 'images/zegar_zamek.jpg',
             id: 'carousel-cell6',
-            title: 'Picture 6',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Gryfy Zegarowe - Zamek Książąt Pomorskich',
+            coords: {lat: 53.426002, lng: 14.560424},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="Zamek Zegar"> <p>Dolor sit.</p>'
         },
         {
-            image: 'https://picsum.photos/2000/1000?random=7',
+            image: 'images/gryf_straz_energetykow.JPG',
             id: 'carousel-cell7',
-            title: 'Picture 7',
-            description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            title: 'Gryf Portowej Straży Pożarnej',
+            coords: {lat: 53.417473, lng: 14.568466},
+            description: '<p>Lorem ipsum.</p> <img src="" alt="gryf straż"> <p>Dolor sit.</p>'
         }
     ];
 </script>
+
 <script src="js/script.js"></script>
 
 </body>
