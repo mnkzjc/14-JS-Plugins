@@ -26,7 +26,7 @@ results.insertAdjacentHTML('beforeend', listCells);
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options
-//  autoPlay: true,
+  autoPlay: true,
   cellAlign: 'left',
   contain: true,
   hash: true,
@@ -65,7 +65,7 @@ var infos = document.getElementById('marker-infos');
 
         var markersArray = [];
 
-    // The marker, positioned at cell-x coords
+    // Markers, positioned at cell-x coords
     for(var i = 0; i < cellData.length; i++){
       var markerX = new google.maps.Marker({
         position: cellData[i].coords, 
@@ -74,16 +74,7 @@ var infos = document.getElementById('marker-infos');
       markersArray.push(markerX);
 
     }    
-
-    for(var i = 0; i < markersArray.length; i++){
-      markersArray[i].addListener('click', function(){
-        flkty.select(i);
-        infos.innerHTML = 'You clicked marker ' + i;
-    });
-    }
   };
-
-
 
 })();
 
