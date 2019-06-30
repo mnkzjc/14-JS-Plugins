@@ -26,7 +26,7 @@ results.insertAdjacentHTML('beforeend', listCells);
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options
-  autoPlay: true,
+//  autoPlay: true,
   cellAlign: 'left',
   contain: true,
   hash: true,
@@ -50,7 +50,7 @@ flkty.on( 'scroll', function( progress ) {
 
 
 // ----------- MAPS ----------
-
+var infos = document.getElementById('marker-infos');
 (function(){
 
 // Initialize and add the map
@@ -63,6 +63,7 @@ flkty.on( 'scroll', function( progress ) {
           center: cellData[0].coords
         });
 
+        var markersArray = [];
 
     // The marker, positioned at cell-x coords
     for(var i = 0; i < cellData.length; i++){
@@ -70,10 +71,19 @@ flkty.on( 'scroll', function( progress ) {
         position: cellData[i].coords, 
         map: map
       });
+      markersArray.push(markerX);
 
     }    
 
+    for(var i = 0; i < markersArray.length; i++){
+      markersArray[i].addListener('click', function(){
+        flkty.select(i);
+        infos.innerHTML = 'You clicked marker ' + i;
+    });
+    }
   };
+
+
 
 })();
 
