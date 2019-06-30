@@ -50,7 +50,7 @@ flkty.on( 'scroll', function( progress ) {
 
 
 // ----------- MAPS ----------
-var infos = document.getElementById('marker-infos');
+
 (function(){
 
 // Initialize and add the map
@@ -58,12 +58,13 @@ var infos = document.getElementById('marker-infos');
 
     // The map, centered at cell-1 coords
     var map = new google.maps.Map(
-        document.getElementById('map'), {
-          zoom: 16, 
-          center: cellData[0].coords
-        });
+      document.getElementById('map'), {
+        zoom: 14, 
+        center: cellData[0].coords
+      }
+    );
 
-        var markersArray = [];
+    var markersArray = [];
 
     // Markers, positioned at cell-x coords
     for(var i = 0; i < cellData.length; i++){
@@ -72,8 +73,20 @@ var infos = document.getElementById('marker-infos');
         map: map
       });
       markersArray.push(markerX);
-
     }    
+
+    // Click on marker to change cell
+    markersArray.forEach(function(marker, index){
+      marker.addListener('click', function(){
+        flkty.select(index);
+      });
+    });
+
+    // Change cell to zoom on corresponding marker
+    flkty.on('change', function(index){
+      map.panTo(cellData[index].coords);
+    });
+
   };
 
 })();
